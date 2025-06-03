@@ -1,11 +1,9 @@
 package com.profile.profile_service.dto.request;
 
+import java.time.LocalDate;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-
-import java.time.LocalDate;
-import java.util.List;
 
 @Data
 @Builder
@@ -13,6 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ProfileCreationRequest {
+    String userId;
     String firstName;
     String lastName;
     String city;

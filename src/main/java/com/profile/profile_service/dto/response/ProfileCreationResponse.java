@@ -1,9 +1,9 @@
 package com.profile.profile_service.dto.response;
 
+import java.time.LocalDate;
+
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-
-import java.time.LocalDate;
 
 @Data
 @Builder
@@ -12,6 +12,7 @@ import java.time.LocalDate;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ProfileCreationResponse {
     String id;
+    String userId;
     String firstName;
     String lastName;
     String city;

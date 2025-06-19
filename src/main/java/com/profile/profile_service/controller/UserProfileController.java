@@ -2,8 +2,10 @@ package com.profile.profile_service.controller;
 
 import java.util.List;
 
+import com.profile.profile_service.dto.request.ApiResponse;
 import org.springframework.web.bind.annotation.*;
 
+import com.profile.profile_service.dto.request.ProfileUpdateRequest;
 import com.profile.profile_service.dto.response.ProfileCreationResponse;
 import com.profile.profile_service.entity.UserProfile;
 import com.profile.profile_service.service.UserProfileService;
@@ -28,5 +30,12 @@ public class UserProfileController {
     @GetMapping("/users")
     public List<UserProfile> getProfile() {
         return userProfileService.getAllUserProfile();
+    }
+
+    @PutMapping("/users/my-profile")
+    public ApiResponse<ProfileCreationResponse> updateProfile(@RequestBody ProfileUpdateRequest profileUpdateRequest){
+        return ApiResponse.<ProfileCreationResponse>builder()
+                .result(userProfileService.updateUserProfile(profileUpdateRequest))
+                .build();
     }
 }

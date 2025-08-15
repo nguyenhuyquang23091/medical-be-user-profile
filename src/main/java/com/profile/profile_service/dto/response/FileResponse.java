@@ -1,7 +1,5 @@
 package com.profile.profile_service.dto.response;
 
-import java.time.LocalDate;
-
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -10,11 +8,7 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class ProfileCreationResponse {
-    String id;
-    String userId;
-    String firstName;
-    String lastName;
-    String city;
-    LocalDate dob;
+public class FileResponse {
+    String originalFilename;
+    String url;
 }

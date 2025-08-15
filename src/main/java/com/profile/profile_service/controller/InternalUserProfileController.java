@@ -3,7 +3,7 @@ package com.profile.profile_service.controller;
 import org.springframework.web.bind.annotation.*;
 
 import com.profile.profile_service.dto.request.ProfileCreationRequest;
-import com.profile.profile_service.dto.response.ProfileCreationResponse;
+import com.profile.profile_service.dto.response.UserProfileResponse;
 import com.profile.profile_service.service.UserProfileService;
 
 import lombok.AccessLevel;
@@ -19,7 +19,7 @@ public class InternalUserProfileController {
     UserProfileService userProfileService;
 
     @PostMapping("/internal/users")
-    public ProfileCreationResponse creationProfile(@RequestBody ProfileCreationRequest request) {
+    public UserProfileResponse creationProfile(@RequestBody ProfileCreationRequest request) {
         return userProfileService.createUserProfile(request);
     }
 }
